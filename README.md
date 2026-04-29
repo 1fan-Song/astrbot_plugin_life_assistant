@@ -2,6 +2,17 @@
 
 综合生活管理插件，帮你记账、写日记、管笔记、追基金、管日程。
 
+## 推荐模型
+
+本插件大量使用 LLM 工具调用（Function Calling），**需要模型支持工具调用能力**。推荐使用：
+
+- **GLM-4/GLM-5 系列**（智谱）— 国内首选，延迟低
+- **GPT-4o / GPT-4.1**（OpenAI）
+- **Claude 3.5 / Claude 4**（Anthropic）
+- **DeepSeek V3**（深度求索）
+
+> 不支持工具调用的模型（如部分小模型、纯对话模型）无法使用记账、笔记、日程等功能。
+
 ## 功能模块
 
 ### 智能记账
@@ -67,9 +78,10 @@
 
 | 配置 | 说明 | 默认值 |
 |------|------|--------|
-| `obsidian_vault_path` | Obsidian 保管库路径 | 空 |
-| `obsidian_diary_folder` | 日记子文件夹 | `日记` |
-| `obsidian_notes_folder` | 笔记子文件夹 | `笔记` |
+| `obsidian_vault_path` | Obsidian 保管库根路径 | 空（不写入） |
+| `obsidian_diary_folder` | 日记子文件夹名 | `日记` |
+| `obsidian_notes_folder` | 笔记子文件夹名 | `笔记` |
+| `obsidian_finance_folder` | 财务子文件夹名 | `财务` |
 | `auto_polish` | 自动润色笔记/日记 | `true` |
 | `auto_categorize` | 自动分类记账 | `true` |
 | `fund_holdings` | 基金持仓（每行一条） | 空 |
@@ -79,6 +91,36 @@
 | `amap_weather_key` | 高德天气 API Key | 空 |
 | `amap_weather_city` | 高德天气城市编码 | `440300`（深圳） |
 | `weather_city_name` | 天气城市名称（英文） | `Shenzhen` |
+
+## Obsidian 目录结构
+
+配置 `obsidian_vault_path` 后，插件会在保管库下自动创建以下目录：
+
+```
+<你的 Obsidian 保管库>/
+├── 日记/
+│   └── 2026/
+│       └── 2026_04/
+│           └── 2026-04-29.md
+├── 笔记/
+│   ├── 游戏笔记/
+│   │   └── 所向之未来.md
+│   ├── 读书笔记/
+│   │   └── xxx.md
+│   ├── 影视笔记/
+│   ├── 音乐笔记/
+│   ├── 追剧笔记/
+│   └── 个人健康与运动档案.md
+├── 财务/
+│   └── 2026-04.md
+└── 附件/
+    └── img_20260429_a1b2.png
+```
+
+- 日记按 `年/月` 分目录，文件名为日期
+- 笔记按类型分文件夹，文件名为笔记标题
+- 图片自动保存到 `附件/` 目录
+- 留空 `obsidian_vault_path` 则不写入 Obsidian
 
 ## 依赖
 
