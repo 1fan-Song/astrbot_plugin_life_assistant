@@ -1,0 +1,80 @@
+{
+    "obsidian_vault_path": {
+        "type": "string",
+        "description": "Obsidian 笔记库路径",
+        "default": "",
+        "hint": "Obsidian vault 的完整路径，留空则不写入 Obsidian"
+    },
+    "obsidian_diary_folder": {
+        "type": "string",
+        "description": "日记子文件夹",
+        "default": "日记",
+        "hint": "日记文件将保存到 vault/日记/YYYY-MM/ 目录下"
+    },
+    "obsidian_notes_folder": {
+        "type": "string",
+        "description": "笔记子文件夹",
+        "default": "笔记",
+        "hint": "读书/游戏/影视笔记将保存到此目录下"
+    },
+    "obsidian_finance_folder": {
+        "type": "string",
+        "description": "财务子文件夹",
+        "default": "财务",
+        "hint": "月度财务总结保存到此目录"
+    },
+    "auto_polish": {
+        "type": "bool",
+        "description": "是否自动润色日记和笔记",
+        "default": true,
+        "hint": "记录时自动用 AI 润色内容，同时保留原文"
+    },
+    "auto_categorize": {
+        "type": "bool",
+        "description": "是否自动分类记账",
+        "default": true,
+        "hint": "记录支出/收入时自动用 AI 识别分类"
+    },
+    "fund_holdings": {
+        "type": "string",
+        "description": "基金持仓列表",
+        "default": "",
+        "hint": "每行一条: 基金代码 或 基金代码,份额。如 022459,11542"
+    },
+    "briefing_push_target": {
+        "type": "string",
+        "description": "定时推送目标会话",
+        "default": "",
+        "hint": "晨报和晚间总结的推送目标（unified_msg_origin），留空则不自动推送"
+    },
+    "briefing_push_hour": {
+        "type": "int",
+        "description": "晨报推送时间（小时）",
+        "default": 8,
+        "hint": "每天几点自动推送晨报（0-23）"
+    },
+    "summary_push_hour": {
+        "type": "int",
+        "description": "晚间总结推送时间（小时）",
+        "default": 22,
+        "hint": "每天几点自动推送每日总结（0-23）"
+    },
+    "amap_weather_key": {
+        "type": "string",
+        "description": "高德天气 API Key",
+        "default": "",
+        "hint": "高德开放平台免费Key（每天5000次），留空则尝试wttr.in。申请：https://lbs.amap.com/"
+    },
+    "amap_weather_city": {
+        "type": "string",
+        "description": "高德天气城市编码",
+        "default": "440300",
+        "hint": "高德城市adcode，440300=深圳。查询：https://lbs.amap.com/api/webservice/guide/api/district"
+    },
+    "weather_city_name": {
+        "type": "string",
+        "description": "天气城市名称（用于wttr.in和晨报标签）",
+        "default": "Shenzhen",
+        "hint": "英文城市名，如 Shenzhen/Beijing/Shanghai。用于wttr.in备用天气源和晨报天气标签"
+    }
+}

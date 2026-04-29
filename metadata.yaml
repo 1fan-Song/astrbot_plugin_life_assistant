@@ -1,0 +1,10 @@
+name: astrbot_plugin_life_assistant
+display_name: "生活助手 (Life Assistant)"
+author: "Aemeath"
+version: "v1.1.0"
+desc: "综合生活管理插件：智能记账、日记自动生成、读书/游戏/影视笔记、媒体库管理、健康追踪、基金监控、日程提醒、Obsidian 同步"
+repo: "https://github.com/Aemeath/astrbot_plugin_life_assistant"
+astrbot_version: ">=4.17.0"
+support_platforms:
+  - aiocqhttp
+  - qq_official
