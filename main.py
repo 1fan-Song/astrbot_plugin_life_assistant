@@ -849,7 +849,7 @@ class LifeAssistant(Star):
         nt = note_type if note_type else None
         results = await self.db.search_notes(sid, query, nt)
         if not results:
-            return f"没找到跟"{query}"相关的笔记"
+            return f"没找到跟'{query}'相关的笔记"
         lines = []
         type_labels = NOTE_TYPE_NAMES
         for r in results:
